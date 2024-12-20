@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="output.css">
+    <style>
+        .dd{
+            background-color: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(1px)
+        }
+    </style>
+</head>
+<body>
+    <section
+    class="w-full h-[100vh] bg-gradient-to-br from-slate-500  via-slate-900 to-black flex justify-center items-end  ">
+    <div
+        class=" flex justify-center relative backdrop-blur-3xl w-[700px] h-[400px] bg-gradient-to-t from-neutral-800 to-neutral-500 shadow-2xl rounded-xl mb-5 flex-wrap group   ">
+        <div class="w-[58%]  h-[220px] text-3xl absolute -top-36 rounded-xl   bg-white text-white  shadow-black shadow-2xl transition-all duration-300   "
+            style="background-image: url(img/backgrounds-textures-715-infinitychap.com-0436574379.jpg); background-position-y: bottom ; animation:gh linear infinite 40s ;">
+            <p class="w-full flex justify-end pr-3 font-bold">C A R D</p>
+            <div class="div dd w-full text-white shadote  backdrop-filter mt-10 flex justify-center  gap-3 *:font-bold *:drop-shadow-2xl *:filter">
+                <h1></h1>-
+                <h1></h1>-
+                <h1></h1>-
+                <h1></h1>
+            </div>
+            <div class="w-full dd  py-2 mt-14 flex   " >
+                <span class="text-2xl w-6   " id="cvv2"></span>
+                <span class="text-xl w-6 ml-64  " id="yemoo"></span>
+                <span class="text-xl w-6   -translate-x-12 " id="ye"></span>
+            </div>
+        </div>
+        
+        <span class=" span w-full flex gap-x-6 justify-center  h-[40px] translate-y-36 overflow-hidden  *:rounded-md *:w-[100px] *:animate-jj *:flex *:justify-center ">
+            <input class="  " type="number">-
+            <input class="  " type="number">-
+            <input class="  " type="number">-
+            <input class="  " type="number">
+        </span>
+        <span class="w-full flex justify-center translate-y-32 ">
+            <button class="w-[70%] h-[50px] bg-white rounded-md hover:bg-gradient-to-r hover:text-white  hover:from-slate-500   hover:via-slate-900  hover:to-black transition-all duration-400  hover:transition-all hover:duration-400 font-sans "> پرداخت</button>
+        </span>
+        <div class="w-full  gap-4 mt-6 flex justify-evenly  h-[50px] translate-y-16 *:w-[200px] *:rounded-lg *:text-center  *:animate-jj ">
+            <input type="number" placeholder="Moon" class="" id="moon">
+            <input type="number" placeholder="Year" class="" id="year">
+            <input type="number" placeholder=" ccv2" class="" id="k">
+        </div>
+    </div>
+</section>
+<script>
+const input = document.querySelectorAll('span>input');
+const h1 = document.querySelectorAll('div > h1');
+const j = document.querySelector('#k')
+const cvv2 = document.querySelector('#cvv2')
+const moon = document.querySelector('#moon')
+const year = document.querySelector('#year')
+const yemoo = document.querySelector('#yemoo')
+const ye = document.querySelector('#ye')
+console.log(year);
+console.log(moon);
+console.log(j);
+input.forEach((val, index) => {
+    val.addEventListener('keyup', () => {
+        if(val.value.length>4){
+          val.value = val.value.slice(0,4)
+        }
+        h1[index].textContent = val.value;
+        if (val.value.length === 4 && input[index + 1]) {
+            input[index + 1].focus();
+        }        
+    });
+});
+j.addEventListener('keyup',(e)=>{
+    cvv2.textContent = 'cvv2'+':'+ e.target.value
+})
+year.addEventListener('keyup', (e) => {
+    if (e.target.value.length > 2) {
+        e.target.value= e.target.value.slice(0, 2); 
+        console.log(x); 
+    }
+    ye.textContent = e.target.value;
+});
+moon.addEventListener('keyup',(e)=>{
+    if (e.target.value.length > 2) {
+        e.target.value= e.target.value.slice(0, 2);
+        console.log(x);
+    }
+    yemoo.textContent ='/'+ e.target.value;
+
+
+})
+
+
+</script>
+</body>
+</html>
